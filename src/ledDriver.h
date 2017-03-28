@@ -4,10 +4,18 @@
 
 #include <stdint.h>
 
-void ledDriver_create(uint16_t *address);
+uint16_t driverAddress;
 
-void ledDriver_led_on(uint16_t *address,uint8_t led);
+void ledDriver_create(void);
 
-void ledDriver_led_off(uint16_t *address,uint8_t led);
+void ledDriver_led_on(uint8_t led);
+
+void ledDriver_led_off(uint8_t led);
+
+void ledDriver_multiple_led_set(uint16_t led_mask);
+
+void ledDriver_all_led(uint8_t power);
+
+uint8_t ledDriver_get_state(uint8_t led);
 
 #endif 
