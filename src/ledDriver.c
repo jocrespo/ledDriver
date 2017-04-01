@@ -14,7 +14,8 @@ void ledDriver_create(){
  *
  */
 void ledDriver_led_on(uint8_t led){
-        driverAddress |= 1<<led;
+	if(led<16)
+        	driverAddress |= 1<<led;
 }
 
 /*
@@ -22,7 +23,8 @@ void ledDriver_led_on(uint8_t led){
  *
  */
 void ledDriver_led_off(uint8_t led){
-	driverAddress ^= 1<<led;
+	if(led<16)
+		driverAddress ^= 1<<led;
 }
 
 /*
@@ -38,9 +40,11 @@ void ledDriver_multiple_led_set(uint16_t led_mask){
  *
  */
 uint8_t ledDriver_get_state(uint8_t led){
-	uint8_t state=0;
-	if((driverAddress &= 1<<led)>0){
-		state=1;
+	uint8_t state=0xFF;
+	if(led<16){
+		if((driverAddress &= 1<<led)>0){
+			state=1;
+		}
 	}
 	return state;
 }
