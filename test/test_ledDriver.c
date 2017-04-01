@@ -100,28 +100,28 @@ void testLedDriverMultipleLedSetEnciendeYApagaVariosLedALaVez(){
 	ledDriver_create(); // al inicializar driverAddress = 0x0000
 	ledDriver_multiple_led_set((uint16_t)0xFF00);
 
-	TEST_ASSERT_EQUAL_UINT16 (0, ledDriver_get_state(0));
-	TEST_ASSERT_EQUAL_UINT16 (0, ledDriver_get_state(1));
-	TEST_ASSERT_EQUAL_UINT16 (0, ledDriver_get_state(2));
-	TEST_ASSERT_EQUAL_UINT16 (0, ledDriver_get_state(3));
-        TEST_ASSERT_EQUAL_UINT16 (0, ledDriver_get_state(4));
-	TEST_ASSERT_EQUAL_UINT16 (0, ledDriver_get_state(5));
-	TEST_ASSERT_EQUAL_UINT16 (0, ledDriver_get_state(6));
-	TEST_ASSERT_EQUAL_UINT16 (0, ledDriver_get_state(7));
-        TEST_ASSERT_EQUAL_UINT16 (1, ledDriver_get_state(8));
-	TEST_ASSERT_EQUAL_UINT16 (1, ledDriver_get_state(9));
-	TEST_ASSERT_EQUAL_UINT16 (1, ledDriver_get_state(10));
-	TEST_ASSERT_EQUAL_UINT16 (1, ledDriver_get_state(11));
-        TEST_ASSERT_EQUAL_UINT16 (1, ledDriver_get_state(12));
-	TEST_ASSERT_EQUAL_UINT16 (1, ledDriver_get_state(13));
-	TEST_ASSERT_EQUAL_UINT16 (1, ledDriver_get_state(14));
-	TEST_ASSERT_EQUAL_UINT16 (1, ledDriver_get_state(15));
+	TEST_ASSERT_EQUAL_UINT8 (0, ledDriver_get_state(0));
+	TEST_ASSERT_EQUAL_UINT8 (0, ledDriver_get_state(1));
+	TEST_ASSERT_EQUAL_UINT8 (0, ledDriver_get_state(2));
+	TEST_ASSERT_EQUAL_UINT8 (0, ledDriver_get_state(3));
+        TEST_ASSERT_EQUAL_UINT8 (0, ledDriver_get_state(4));
+	TEST_ASSERT_EQUAL_UINT8 (0, ledDriver_get_state(5));
+	TEST_ASSERT_EQUAL_UINT8 (0, ledDriver_get_state(6));
+	TEST_ASSERT_EQUAL_UINT8 (0, ledDriver_get_state(7));
+        TEST_ASSERT_EQUAL_UINT8 (1, ledDriver_get_state(8));
+	TEST_ASSERT_EQUAL_UINT8 (1, ledDriver_get_state(9));
+	TEST_ASSERT_EQUAL_UINT8 (1, ledDriver_get_state(10));
+	TEST_ASSERT_EQUAL_UINT8 (1, ledDriver_get_state(11));
+        TEST_ASSERT_EQUAL_UINT8 (1, ledDriver_get_state(12));
+	TEST_ASSERT_EQUAL_UINT8 (1, ledDriver_get_state(13));
+	TEST_ASSERT_EQUAL_UINT8 (1, ledDriver_get_state(14));
+	TEST_ASSERT_EQUAL_UINT8 (1, ledDriver_get_state(15));
 
 	ledDriver_multiple_led_set(0x0F00);
-        TEST_ASSERT_EQUAL_UINT16 (0, ledDriver_get_state(12));
-	TEST_ASSERT_EQUAL_UINT16 (0, ledDriver_get_state(13));
-	TEST_ASSERT_EQUAL_UINT16 (0, ledDriver_get_state(14));
-	TEST_ASSERT_EQUAL_UINT16 (0, ledDriver_get_state(15));
+        TEST_ASSERT_EQUAL_UINT8 (0, ledDriver_get_state(12));
+	TEST_ASSERT_EQUAL_UINT8 (0, ledDriver_get_state(13));
+	TEST_ASSERT_EQUAL_UINT8 (0, ledDriver_get_state(14));
+	TEST_ASSERT_EQUAL_UINT8 (0, ledDriver_get_state(15));
 }
 
 // Test 5
@@ -155,22 +155,22 @@ void testLedDriverGetStateDevuelveEstadoDeCadaLedIndividual(){
 	ledDriver_led_on(7);
 	ledDriver_led_on(14);
 	ledDriver_led_on(15);
-        TEST_ASSERT_EQUAL_UINT16 (0, ledDriver_get_state(0));
-	TEST_ASSERT_EQUAL_UINT16 (0, ledDriver_get_state(1));
-	TEST_ASSERT_EQUAL_UINT16 (0, ledDriver_get_state(2));
-	TEST_ASSERT_EQUAL_UINT16 (0, ledDriver_get_state(3));
-        TEST_ASSERT_EQUAL_UINT16 (1, ledDriver_get_state(4));
-	TEST_ASSERT_EQUAL_UINT16 (0, ledDriver_get_state(5));
-	TEST_ASSERT_EQUAL_UINT16 (0, ledDriver_get_state(6));
-	TEST_ASSERT_EQUAL_UINT16 (1, ledDriver_get_state(7));
-        TEST_ASSERT_EQUAL_UINT16 (0, ledDriver_get_state(8));
-	TEST_ASSERT_EQUAL_UINT16 (0, ledDriver_get_state(9));
-	TEST_ASSERT_EQUAL_UINT16 (0, ledDriver_get_state(10));
-	TEST_ASSERT_EQUAL_UINT16 (0, ledDriver_get_state(11));
-        TEST_ASSERT_EQUAL_UINT16 (0, ledDriver_get_state(12));
-	TEST_ASSERT_EQUAL_UINT16 (0, ledDriver_get_state(13));
-	TEST_ASSERT_EQUAL_UINT16 (1, ledDriver_get_state(14));
-	TEST_ASSERT_EQUAL_UINT16 (1, ledDriver_get_state(15));
+        TEST_ASSERT_EQUAL_UINT8 (0, ledDriver_get_state(0));
+	TEST_ASSERT_EQUAL_UINT8 (0, ledDriver_get_state(1));
+	TEST_ASSERT_EQUAL_UINT8 (0, ledDriver_get_state(2));
+	TEST_ASSERT_EQUAL_UINT8 (0, ledDriver_get_state(3));
+        TEST_ASSERT_EQUAL_UINT8 (1, ledDriver_get_state(4));
+	TEST_ASSERT_EQUAL_UINT8 (0, ledDriver_get_state(5));
+	TEST_ASSERT_EQUAL_UINT8 (0, ledDriver_get_state(6));
+	TEST_ASSERT_EQUAL_UINT8 (1, ledDriver_get_state(7));
+        TEST_ASSERT_EQUAL_UINT8 (0, ledDriver_get_state(8));
+	TEST_ASSERT_EQUAL_UINT8 (0, ledDriver_get_state(9));
+	TEST_ASSERT_EQUAL_UINT8 (0, ledDriver_get_state(10));
+	TEST_ASSERT_EQUAL_UINT8 (0, ledDriver_get_state(11));
+        TEST_ASSERT_EQUAL_UINT8 (0, ledDriver_get_state(12));
+	TEST_ASSERT_EQUAL_UINT8 (0, ledDriver_get_state(13));
+	TEST_ASSERT_EQUAL_UINT8 (1, ledDriver_get_state(14));
+	TEST_ASSERT_EQUAL_UINT8 (1, ledDriver_get_state(15));
 }
 
 // Test 8
@@ -179,17 +179,17 @@ void testLedDriverValoresLimite(){
 
 	ledDriver_led_on(0);
 	TEST_ASSERT_EQUAL_UINT16 (0x0001, driverAddress);
-	TEST_ASSERT_EQUAL_UINT16 (1, ledDriver_get_state(0));	
+	TEST_ASSERT_EQUAL_UINT8 (1, ledDriver_get_state(0));	
 	ledDriver_led_off(0);
 	TEST_ASSERT_EQUAL_UINT16 (0x0000, driverAddress);
-	TEST_ASSERT_EQUAL_UINT16 (0, ledDriver_get_state(0));
+	TEST_ASSERT_EQUAL_UINT8 (0, ledDriver_get_state(0));
 
 	ledDriver_led_on(0);
 	TEST_ASSERT_EQUAL_UINT16 (0x0001, driverAddress);
-	TEST_ASSERT_EQUAL_UINT16 (1, ledDriver_get_state(0));	
+	TEST_ASSERT_EQUAL_UINT8 (1, ledDriver_get_state(0));	
 	ledDriver_led_off(0);
 	TEST_ASSERT_EQUAL_UINT16 (0x0000, driverAddress);
-	TEST_ASSERT_EQUAL_UINT16 (0, ledDriver_get_state(0));
+	TEST_ASSERT_EQUAL_UINT8 (0, ledDriver_get_state(0));
 
 }
 
