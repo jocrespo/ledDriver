@@ -31,7 +31,7 @@ void ledDriver_led_off(uint8_t led){
  * Enciende/Apaga varios leds segun la mascara recibida como parametro 
  *
  */
-void ledDriver_multiple_led_set(uint16_t led_mask){
+void ledDriver_multiple_led_set(uint16_t ledMask){
 	driverAddress = ledMask;
 }
 
