@@ -205,7 +205,7 @@ void testLedDriverValoresFueraLimite(){
 	TEST_ASSERT_EQUAL_UINT8 (0xFF, ledDriver_get_state(16));	
 	TEST_ASSERT_EQUAL_UINT8 (0xFF, ledDriver_get_state(20));	
 
-	ledDriver_multiple_led_set((uint8_t)0xFF);
+	ledDriver_multiple_led_set((uint16_t)0xFFFF);
 	ledDriver_led_off(16);
 	ledDriver_led_off(20);
 	TEST_ASSERT_EQUAL_UINT16 (0xFFFF, driverAddress);
