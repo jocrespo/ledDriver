@@ -44,6 +44,8 @@ uint8_t ledDriver_get_state(uint8_t led){
 	if(led<16){
 		if((driverAddress &= 1<<led)>0){
 			state=1;
+		}else{
+			state=0;		
 		}
 	}
 	return state;
