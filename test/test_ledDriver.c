@@ -77,7 +77,7 @@ void testLedDriverLedOffApagaCadaLed(){
         TEST_ASSERT_EQUAL_UINT16 (0xFF00, driverAddress);
 	ledDriver_led_off(8);
         TEST_ASSERT_EQUAL_UINT16 (0xFE00, driverAddress);
-	ledDriver_led_off(,9);
+	ledDriver_led_off(9);
         TEST_ASSERT_EQUAL_UINT16 (0xFC00, driverAddress);
 	ledDriver_led_off(10);
         TEST_ASSERT_EQUAL_UINT16 (0xF800, driverAddress);
