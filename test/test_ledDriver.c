@@ -98,7 +98,7 @@ void testLedDriverLedOffApagaCadaLed(){
 void testLedDriverMultipleLedSetEnciendeYApagaVariosLedALaVez(){
 
 	ledDriver_create(); // al inicializar driverAddress = 0x000
-	ledDriver_multiple_led_set(0xFF00);
+	ledDriver_multiple_led_set((uint16_t)0xFF00);
 
 	TEST_ASSERT_EQUAL_UINT16 (0, ledDriver_get_state(0));
 	TEST_ASSERT_EQUAL_UINT16 (0, ledDriver_get_state(1));

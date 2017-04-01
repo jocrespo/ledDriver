@@ -32,7 +32,7 @@ void ledDriver_led_off(uint8_t led){
  *
  */
 void ledDriver_multiple_led_set(uint16_t ledMask){
-	driverAddress = ledMask;
+	driverAddress = (uint16_t)ledMask;
 }
 
 /*
