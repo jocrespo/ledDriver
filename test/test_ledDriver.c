@@ -199,17 +199,17 @@ void testLedDriverValoresFueraLimite(){
 	ledDriver_create(); // Al inicializar driverAddress = 0x000
 
 	// No deberia tener efecto encender/apagar/pedir/estado leds por encima del indice 15
-	ledDriver_led_on(15);
+	ledDriver_led_on(16);
 	ledDriver_led_on(20);
 	TEST_ASSERT_EQUAL_UINT16 (0x0000, driverAddress);
-	TEST_ASSERT_EQUAL_UINT8 (0xFF, ledDriver_get_state(15));	
+	TEST_ASSERT_EQUAL_UINT8 (0xFF, ledDriver_get_state(16));	
 	TEST_ASSERT_EQUAL_UINT8 (0xFF, ledDriver_get_state(20));	
 
 	ledDriver_multiple_led_set((uint8_t)0xFF);
-	ledDriver_led_off(15);
+	ledDriver_led_off(16);
 	ledDriver_led_off(20);
 	TEST_ASSERT_EQUAL_UINT16 (0xFFFF, driverAddress);
-	TEST_ASSERT_EQUAL_UINT8 (0xFF, ledDriver_get_state(15));	
+	TEST_ASSERT_EQUAL_UINT8 (0xFF, ledDriver_get_state(16));	
 	TEST_ASSERT_EQUAL_UINT8 (0xFF, ledDriver_get_state(20));
 
 }

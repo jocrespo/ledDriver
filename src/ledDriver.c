@@ -14,8 +14,9 @@ void ledDriver_create(){
  *
  */
 void ledDriver_led_on(uint8_t led){
-	if(led<16)
+	if(led<16){
         	driverAddress |= (1<<led);
+	}
 }
 
 /*
@@ -23,8 +24,9 @@ void ledDriver_led_on(uint8_t led){
  *
  */
 void ledDriver_led_off(uint8_t led){
-	if(led<16)
+	if(led<16){
 		driverAddress ^= (1<<led);
+	}
 }
 
 /*
