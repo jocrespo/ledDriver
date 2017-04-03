@@ -4,7 +4,10 @@
 
 #include <stdint.h>
 
-uint16_t driverAddress;
+/**
+* Mapping de estado de 16 leds. Desde el led 0 en LSB a el 15 en MSB 
+*/
+uint16_t driverAddress; 
 
 void ledDriver_create(void);
 
