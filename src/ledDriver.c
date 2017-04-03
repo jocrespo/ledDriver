@@ -3,9 +3,11 @@
 /**
  * Crea el driver, seteando los led apagados por inicializacion 
  *
+ * @param uint16_t* address Map del driver en memoria
  */
-void ledDriver_create(){
-	driverAddress = 0;
+void ledDriver_create(uint16_t* address){
+	driverAddress = address;
+	*driverAddress = 0;
 }
 
 /**
@@ -16,7 +18,7 @@ void ledDriver_create(){
  */
 void ledDriver_led_on(uint8_t led){
 	if(led<16){
-        	driverAddress |= (1<<led);
+        	*driverAddress |= (1<<led);
 	}
 }
 
@@ -28,7 +30,7 @@ void ledDriver_led_on(uint8_t led){
  */
 void ledDriver_led_off(uint8_t led){
 	if(led<16){
-		driverAddress ^= (1<<led);
+		*driverAddress ^= (1<<led);
 	}
 }
 
@@ -41,7 +43,7 @@ void ledDriver_led_off(uint8_t led){
  * @return void 
  */
 void ledDriver_multiple_led_set(uint16_t ledMask){
-	driverAddress = (uint16_t)ledMask;
+	*driverAddress = (uint16_t)ledMask;
 }
 
 
@@ -54,7 +56,7 @@ void ledDriver_multiple_led_set(uint16_t ledMask){
 uint8_t ledDriver_get_state(uint8_t led){
 	uint8_t state=0xFF;
 	if(led<16){
-		if((driverAddress & (1<<led))>0){
+		if((*driverAddress & (1<<led))>0){
 			state=1;
 		}else{
 			state=0;		
@@ -72,8 +74,8 @@ uint8_t ledDriver_get_state(uint8_t led){
  */
 void ledDriver_all_led(uint8_t power){
 	if(power>0){
-		driverAddress = 0xFFFF;
+		*driverAddress = 0xFFFF;
 	}else
-		driverAddress = 0;
+		*driverAddress = 0;
 }
 

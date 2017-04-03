@@ -7,9 +7,9 @@
 /**
 * Mapping de estado de 16 leds. Desde el led 0 en LSB a el 15 en MSB 
 */
-uint16_t driverAddress; 
+uint16_t* driverAddress; 
 
-void ledDriver_create(void);
+void ledDriver_create(uint16_t* address);
 
 void ledDriver_led_on(uint8_t led);
 
