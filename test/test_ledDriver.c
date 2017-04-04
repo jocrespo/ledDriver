@@ -198,7 +198,7 @@ void testLedDriverValoresLimite(){
 void testLedDriverValoresFueraLimite(){
 
 	ledDriver_create(&MEM_DRIVER_ADDRESS); // Al inicializar driverAddress = 0x000
-
+	ledDriver_all_led(0);
 	// No deberia tener efecto encender/apagar/pedir/estado leds por encima del indice 15
 	ledDriver_led_on(16);
 	ledDriver_led_on(20);
